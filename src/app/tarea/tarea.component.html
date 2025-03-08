@@ -1,35 +1,23 @@
-<div class="container">
-    <h1>Formulario de Tareas</h1>
-    <form (ngSubmit)="crearTarea()">
-      <div class="form-group">
-        <label for="titulo">Título:</label>
-        <input type="text" [(ngModel)]="tarea.titulo" name="titulo" id="titulo" required>
-      </div>
-      <div class="form-group">
-        <label for="descripcion">Descripción:</label>
-        <input type="text" [(ngModel)]="tarea.descripcion" name="descripcion" id="descripcion" required>
-      </div>
-      <button type="submit" class="btn btn-primary">Crear</button>
-    </form>
-  
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Título</th>
-          <th>Descripción</th>
-          <th>Acciones</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let tarea of tareas">
-          <td>{{ tarea.titulo }}</td>
-          <td>{{ tarea.descripcion }}</td>
-          <td>
-            <button class="btn btn-info">Editar</button>
-            <button class="btn btn-danger">Eliminar</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+<div class="app-container">
+  <div class="container">
+   <div class="input-area">
+    <input type="text" placeholder="Nueva tarea..." class="task-input" [(ngModel)]="nuevaTarea"
+     (keyup.enter)="agregarTarea()">
+    <button class="add-button" (click)="agregarTarea()">Agregar</button>
+   </div>
+
+   <div class="title">
+    <h2>{{ titulo }}</h2>
+   </div>
+
+   <div *ngFor="let tarea of tareas" class="task-container">
+    <div class="task-description">
+     <p>{{ tarea.title }}</p>
+    </div>
+    <div class="task-actions">
+     <button class="edit-button">Editar</button>
+     <button class="delete-button">Eliminar</button>
+    </div>
+   </div>
   </div>
-  
+ </div>

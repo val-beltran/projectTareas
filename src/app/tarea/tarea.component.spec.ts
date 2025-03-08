@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { TareaComponent } from './tarea.component';
 
 describe('TareaComponent', () => {
